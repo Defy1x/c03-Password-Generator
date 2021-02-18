@@ -1,8 +1,8 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-var alphabet =["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-var numbers =["0","1","2","3","4","5","6","7","8","9"];
-var special =[ "!", "#", "$", "%", "&", ")", "(", "*", "+", "?", "@", "~" ];
+var alphabetArray =["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+var numbersArray =["0","1","2","3","4","5","6","7","8","9"];
+var specialArray =[ "!", "#", "$", "%", "&", ")", "(", "*", "+", "?", "@", "~" ];
 var password=[""];
 
 // Write password to the #password input
@@ -19,13 +19,18 @@ var lengthPrompt = function() {
   var userChoice = window.prompt("Enter a number between 8 - 128 characters:");
   // If user pressed Cancel, immediately end function
   if (!userChoice) {
-    return;
+    window.alert("Please choose a number between 8 - 128 characters");
+    lengthPrompt();
   }
-  else if (userChoice < 8 && userChoice < 128) {
-    window.alert("Please choose a password length between 8 - 128 characters");
-    return;
+  else if (userChoice < 8 || userChoice > 128) {
+    window.alert("Please choose a number between 8 - 128 characters");
+    lengthPrompt();
   }
-  else if (userChoice >= 8 && userChoice <= 128) {
+  // else if(userChoice !== numbersArray){
+  //   window.alert("Please choose a number between 8 - 128 characters");
+  //   lengthPrompt();
+  // }
+  else if (userChoice >= 8 || userChoice <= 128) {
     var characterLength = userChoice;
     console.log(characterLength);
     return;
@@ -33,9 +38,12 @@ var lengthPrompt = function() {
 };
 
 var lowerCasePrompt = function() {
-  var answerLowerCase = window.prompt("Lowercase letters? (Y/N)");
+  var inputLowerCase = window.prompt("Would you like Lowercase letters? (Y/N)");
+  var answerLowerCase = inputLowerCase.toUpperCase();
+  console.log(answerLowerCase);
+
   if (!answerLowerCase) {
-    window.alert("Please choose yes or no");
+    window.alert("Please enter Y or N");
     console.log("they did not make a choice");
     lowerCasePrompt();
   }
@@ -43,63 +51,86 @@ var lowerCasePrompt = function() {
     console.log("the user picked lowercase password");
     return;
   }
-  else {
-  console.log ("The user did not pick lowercase password");
-  return;
+  else if (answerLowerCase === "N"){
+    console.log ("The user did not pick lowercase password");
+    return;
+  }
+  else if (answerLowerCase !== "N" || answerLowerCase !== "Y"){
+    window.alert("Please enter Y or N");
+    console.log("they did not enter the right character");
+    lowerCasePrompt();
   }
 };
 
 var upperCasePrompt = function() {
-  var answerUpperCase = window.prompt("Uppercase letters? (Y/N)");
+  var inputUpperCase = window.prompt("Would you like Uppercase letters? (Y/N)");
+  var answerUpperCase = inputUpperCase.toUpperCase();
+
   if (!answerUpperCase) {
-    window.alert("Please choose yes or no");
+    window.alert("Please enter Y or N");
     console.log("they did not make a choice");
     upperCasePrompt();
   }
   else if (answerUpperCase === "Y") {
-    //there needs to be a function that runs there to join the array
     console.log("the user picked uppercase password");
     return;
   }
-  else {
-  console.log("The user did not pick uppercase password");
-  return;
+  else if (answerUpperCase === "N"){
+    console.log ("The user did not pick uppercase password");
+    return;
+  }
+  else if (answerUpperCase !== "N" || answerUpperCase !== "Y"){
+    window.alert("Please enter Y or N");
+    console.log("they did not enter the right character");
+    upperCasePrompt();
   }
 };
 
 var numberPrompt = function() {
-  var answerNumber = window.prompt("Numbers? (Y/N)");
+  var inputNumber = window.prompt("Would you like Numbers? (Y/N)");
+  var answerNumber = inputNumber.toUpperCase();
+
   if (!answerNumber) {
-    window.alert("Please choose yes or no");
+    window.alert("Please enter Y or N");
     console.log("they did not make a choice");
     numberPrompt();
   }
   else if (answerNumber === "Y") {
-    //there needs to be a function that runs there to join the array
     console.log("the user picked numbers in their password");
     return;
   }
-  else{
-  console.log("The user did not pick numbers in their password");
-  return;
+  else if (answerNumber === "N"){
+    console.log ("The user did not pick numbers in their password");
+    return;
+  }
+  else if (answerNumber !== "N" || answerNumber !== "Y"){
+    window.alert("Please enter Y or N");
+    console.log("they did not enter the right character");
+    numberPrompt();
   }
 };
 
 var specialPrompt = function() {
-  var answerSpecial = window.prompt("Special Characters? (Y/N)");
+  var inputAnswer = window.prompt("Would you like Special Characters? (Y/N)");
+  var answerSpecial = inputAnswer.toUpperCase();
+
   if (!answerSpecial) {
-    window.alert("Please choose yes or no");
+    window.alert("Please enter Y or N");
     console.log("they did not make a choice");
     specialPrompt();
   }
   else if (answerSpecial === "Y") {
-    //there needs to be a function that runs there to join the array
     console.log("the user picked Special Characters in their password");
     return;
   }
-  else{
-  console.log("The user did not pick Special Characters in their password");
-  return;
+  else if (answerSpecial === "N"){
+    console.log ("The user did not pick lowercase password");
+    return;
+  }
+  else if (answerSpecial !== "N" || answerSpecial !== "Y"){
+    window.alert("Please enter Y or N");
+    console.log("they did not enter the right character");
+    specialPrompt();
   }
 };
 
@@ -115,5 +146,4 @@ var generatePassword = function(){
   numberPrompt();
 //run the special characters prompt
   specialPrompt();
-//
 };

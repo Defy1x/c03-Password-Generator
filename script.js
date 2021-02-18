@@ -26,10 +26,10 @@ var lengthPrompt = function() {
     window.alert("Please choose a number between 8 - 128 characters");
     lengthPrompt();
   }
-  // else if(userChoice !== numbersArray){
-  //   window.alert("Please choose a number between 8 - 128 characters");
-  //   lengthPrompt();
-  // }
+  else if(isNaN(userChoice)){
+    window.alert("Please choose a number not a character");
+    lengthPrompt();
+  }
   else if (userChoice >= 8 || userChoice <= 128) {
     var characterLength = userChoice;
     console.log(characterLength);

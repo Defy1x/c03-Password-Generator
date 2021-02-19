@@ -22,24 +22,21 @@ var generatePassword = function(){
   var password=[];
   var passwordLength = window.prompt("Enter a number between 8 - 128 characters:");
   if (!passwordLength) {
-    window.alert("Please choose a number between 8 - 128 characters");
+    window.alert("Please choose a number between 8 - 128 characters and try again");
     return;
   }
   else if (passwordLength < 8 || passwordLength > 128) {
-    window.alert("Please choose a number between 8 - 128 characters");
-    console.log("test error one");
+    window.alert("Please choose a number between 8 - 128 characters and try again");
     return;
   }
 //checks to see if the number entered is a number
   else if(isNaN(passwordLength)){
-    window.alert("Please choose a number not a character");
-    console.log("test error two")
+    window.alert("Please choose a number not a character and try again");
     return;
   }
   else if (passwordLength >= 8 || passwordLength <= 128) {
     console.log(passwordLength);
   }
-
 
 //confirm password with options window
   var lowerCase = confirm("Would you like to include lowercase letters in your password?");
@@ -50,8 +47,9 @@ var generatePassword = function(){
   console.log(numbers);
   var special = confirm("Would you like to include special characters in your password?");
   console.log(special);
-  var combinePassword = "";
 
+//combines the password together based on options selected
+  var combinePassword = "";
   if (lowerCase) {
   combinePassword = lowerCaseString;
   }
@@ -64,9 +62,11 @@ var generatePassword = function(){
   if (special) {
   combinePassword = combinePassword + specialString;
 
+//random string generator for password
   for ( var i = 0; i < passwordLength; i++ ) {
   password += combinePassword[Math.floor(Math.random() * combinePassword.length)];
   }
+//adds the password back to the array
   return password;
   }
 };

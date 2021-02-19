@@ -23,16 +23,16 @@ var generatePassword = function(){
   var password=[];
   var passwordLength = window.prompt("Enter a number between 8 - 128 characters:");
   if (!passwordLength) {
-    window.alert("Please choose a number between 8 - 128 characters and try again");
+    window.alert("Please choose a number between 8 - 128 characters. Please try again.");
     return;
   }
   else if (passwordLength < 8 || passwordLength > 128) {
-    window.alert("Please choose a number between 8 - 128 characters and try again");
+    window.alert("Please choose a number between 8 - 128 characters. Please try again.");
     return;
   }
 //checks to see if the number entered is a number
   else if(isNaN(passwordLength)){
-    window.alert("Please choose a number not a character and try again");
+    window.alert("Please choose a number not a character. Plese try again");
     return;
   }
   else if (passwordLength >= 8 || passwordLength <= 128) {
@@ -51,7 +51,7 @@ var generatePassword = function(){
 
 //piece to make sure atleast one option is selected is needed
   if (lowerCase === false && upperCase === false && numbers === false && special === false){
-    window.alert("You must choose one of the four options to make your password distinct. Please try again.");
+    window.alert("You must choose one of the four options to make your password protected. Please try again.");
     return;
   }
   else {

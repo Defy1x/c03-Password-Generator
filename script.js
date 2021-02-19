@@ -9,14 +9,15 @@ var upperCaseString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numbersString = "0123456789";
 var specialString = "!()?[]`~;:!@#$%^&*+=";
 
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
 }
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
 
 //Start password generation on button click
 var generatePassword = function(){
@@ -32,7 +33,7 @@ var generatePassword = function(){
   }
 //checks to see if the number entered is a number
   else if(isNaN(passwordLength)){
-    window.alert("Please choose a number not a character. Plese try again");
+    window.alert("Please choose a number not a character. Please try again");
     return;
   }
   else if (passwordLength >= 8 || passwordLength <= 128) {

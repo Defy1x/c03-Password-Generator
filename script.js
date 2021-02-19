@@ -1,4 +1,5 @@
-// Assignment Code
+// Assignment Code Begins
+
 // Grabs the generate selector
 var generateBtn = document.querySelector("#generate");
 
@@ -48,6 +49,12 @@ var generatePassword = function(){
   var special = confirm("Would you like to include special characters in your password?");
   console.log(special);
 
+//piece to make sure atleast one option is selected is needed
+  if (lowerCase === false && upperCase === false && numbers === false && special === false){
+    window.alert("You must choose one of the four options to make your password distinct. Please try again.");
+    return;
+  }
+  else {
 //combines the password together based on options selected
   var combinePassword = "";
   if (lowerCase) {
@@ -69,4 +76,5 @@ var generatePassword = function(){
 //adds the password back to the array
   return password;
   }
+}
 };

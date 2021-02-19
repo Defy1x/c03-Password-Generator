@@ -33,7 +33,7 @@ var generatePassword = function(){
   }
 //checks to see if the number entered is a number
   else if(isNaN(passwordLength)){
-    window.alert("Please choose a number not a character. Please try again");
+    window.alert("Please choose a number not a character. Please try again.");
     return;
   }
   else if (passwordLength >= 8 || passwordLength <= 128) {

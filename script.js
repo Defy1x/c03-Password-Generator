@@ -1,9 +1,9 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-var alphabetArray =["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-var numbersArray =["0","1","2","3","4","5","6","7","8","9"];
-var specialArray =[ "!", "#", "$", "%", "&", ")", "(", "*", "+", "?", "@", "~" ];
-var password=[""];
+var lowerCaseString = "abcdefghijklmnopqrstuvwxyz";
+var upperCaseString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var numbersString = "0123456789";
+var specialString = "!()?[]`~;:!@#$%^&*+=";
 
 // Write password to the #password input
 function writePassword() {
@@ -16,23 +16,22 @@ generateBtn.addEventListener("click", writePassword);
 
 
 var lengthPrompt = function() {
-  var userChoice = window.prompt("Enter a number between 8 - 128 characters:");
+  var lengthChoice = window.prompt("Enter a number between 8 - 128 characters:");
   // If user pressed Cancel, immediately end function
-  if (!userChoice) {
+  if (!lengthChoice) {
     window.alert("Please choose a number between 8 - 128 characters");
     lengthPrompt();
   }
-  else if (userChoice < 8 || userChoice > 128) {
+  else if (lengthChoice < 8 || lengthChoice > 128) {
     window.alert("Please choose a number between 8 - 128 characters");
     lengthPrompt();
   }
-  else if(isNaN(userChoice)){
+  else if(isNaN(lengthChoice)){
     window.alert("Please choose a number not a character");
     lengthPrompt();
   }
-  else if (userChoice >= 8 || userChoice <= 128) {
-    var characterLength = userChoice;
-    console.log(characterLength);
+  else if (lengthChoice >= 8 || lengthChoice <= 128) {
+    console.log(lengthChoice);
     return;
   }
 };

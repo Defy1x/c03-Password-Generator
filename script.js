@@ -1,5 +1,8 @@
 // Assignment Code
+// Grabs the generate selector
 var generateBtn = document.querySelector("#generate");
+
+//strings to set our password
 var lowerCaseString = "abcdefghijklmnopqrstuvwxyz";
 var upperCaseString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numbersString = "0123456789";
@@ -26,6 +29,7 @@ var generatePassword = function(){
     window.alert("Please choose a number between 8 - 128 characters");
     generatePassword();
   }
+//checks to see if the number entered is a number
   else if(isNaN(passwordLength)){
     window.alert("Please choose a number not a character");
     generatePassword();

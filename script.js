@@ -14,6 +14,28 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
+//Start password generation on button click
+var generatePassword = function(){
+  var password=[];
+  var passwordLength = window.prompt("Enter a number between 8 - 128 characters:");
+  if (!passwordLength) {
+    window.alert("Please choose a number between 8 - 128 characters");
+    return;
+  }
+  else if (passwordLength < 8 || passwordLength > 128) {
+    window.alert("Please choose a number between 8 - 128 characters");
+    generatePassword();
+  }
+  else if(isNaN(passwordLength)){
+    window.alert("Please choose a number not a character");
+    generatePassword();
+  }
+  else if (passwordLength >= 8 || passwordLength <= 128) {
+    console.log(passwordLength);
+  }
+
+};
+
 
 var lengthPrompt = function() {
   var lengthChoice = window.prompt("Enter a number between 8 - 128 characters:");
@@ -131,18 +153,4 @@ var specialPrompt = function() {
     console.log("they did not enter the right character");
     specialPrompt();
   }
-};
-
-//Start password generation on button click
-var generatePassword = function(){
-//run the length prompt function
-  lengthPrompt();
-//run the lowercase function
-  lowerCasePrompt();
-//run the uppercase prompt
-  upperCasePrompt();
-//run the number prompt
-  numberPrompt();
-//run the special characters prompt
-  specialPrompt();
 };

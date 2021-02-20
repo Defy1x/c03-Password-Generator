@@ -4,6 +4,20 @@
   box-sizing: border-box;
 }
 
+
+@font-face {
+  font-family: 'Jedi';
+  src: url('assets/fonts/starjedi.eot'); /* IE9 Compat Modes */
+  src: url('assets/fonts/starjedi.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('assets/fonts/starjedi.woff2') format('woff2'), /* Super Modern Browsers */
+       url('assets/fonts/starjedi.woff') format('woff'), /* Pretty Modern Browsers */
+       url('assets/fonts/starjedi.ttf') format('truetype'),
+      url('assets/fonts/starjedi.svg#starjedi') format('svg');
+       font-weight: 500;
+       font-style: normal;
+       letter-spacing: 5px;
+}
+
 html,
 body,
 .wrapper {
@@ -13,25 +27,29 @@ body,
 }
 
 body {
-  font-family: sans-serif;
+  font-family: "Jedi", "Helvetica", "Arial", sans-serif;
   background-color: #f9fbfd;
 }
 
 .wrapper {
   padding-top: 30px;
+  padding-bottom: 0px;
   padding-left: 20px;
   padding-right: 20px;
+  background: #000 url(assets/images/vader.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  align-items: center;
 }
 
-header {
-  text-align: center;
-  padding: 20px;
-  padding-top: 0px;
-  color: hsl(206, 17%, 28%);
+h1{
+  font-size: 28px;
+  color: #fefd4f;
 }
 
 .card {
-  background-color: hsl(0, 0%, 100%);
+  background-color: rgba(0, 0, 0, 0.6);
   border-radius: 5px;
   border-width: 1px;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px 0px;
@@ -39,16 +57,17 @@ header {
   font-size: 18px;
   margin: 0 auto;
   max-width: 800px;
-  padding: 30px 40px;
+  padding: 10px 40px;
+  height: 330px;
 }
 
-.card-header::after {
+/* .card-header::after {
   content: " ";
   display: block;
   width: 100%;
   background: #e7e9eb;
   height: 2px;
-}
+} */
 
 .card-body {
   min-height: 100px;
@@ -58,27 +77,26 @@ header {
   text-align: center;
 }
 
-.card-footer::before {
+/* .card-footer::before {
   content: " ";
   display: block;
   width: 100%;
   background: #e7e9eb;
   height: 2px;
-}
+} */
 
-.card-footer::after {
+/* .card-footer::after {
   content: " ";
   display: block;
   clear: both;
-}
+} */
 
 .btn {
   border: none;
-  background-color: hsl(360, 91%, 36%);
+  background-color: #fefd4f;
   border-radius: 25px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px
-    0px;
-  color: hsl(0, 0%, 100%);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 6px 0px rgba(0, 0, 0, 0.2) 0px 1px 1px 0px;
+  color: #000;
   display: inline-block;
   font-size: 22px;
   line-height: 22px;
@@ -103,6 +121,7 @@ button[disabled] {
   appearance: none;
   border: none;
   display: block;
+  color: #000;
   width: 100%;
   padding-top: 15px;
   padding-left: 15px;
@@ -118,7 +137,13 @@ button[disabled] {
   overflow: hidden;
 }
 
-@media (max-width: 690px) {
+@media (max-width: 720px) {
+  .card{
+    height: 300px;
+  }
+  h1{
+    font-size: 20px;
+  }
   .btn {
     font-size: 1rem;
     margin: 16px 0px 0px 0px;
@@ -130,7 +155,13 @@ button[disabled] {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 550px) {
+  .card{
+    height: 280px;
+  }
+  h1{
+    font-size: 15px;
+  }
   .btn {
     font-size: 0.8rem;
   }

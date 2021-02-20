@@ -63,16 +63,16 @@ var generatePassword = function(){
   var combinePassword = "";
 
   if (lowerCase) {
-  combinePassword = lowerCaseString;
+  combinePassword += lowerCaseString;
   }
   if (upperCase) {
-  combinePassword = combinePassword + upperCaseString;
+  combinePassword += upperCaseString;
   }
   if (numbers) {
-  combinePassword = combinePassword + numbersString;
+  combinePassword += numbersString;
   }
   if (special) {
-  combinePassword = combinePassword + specialString;
+  combinePassword += specialString;
 };
 // if any of the conditions are true run the code
   if (lowerCase ===true || upperCase === true || numbers ===true || special === true){

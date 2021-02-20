@@ -37,18 +37,13 @@ var generatePassword = function(){
     return;
   }
   else if (passwordLength >= 8 || passwordLength <= 128) {
-    console.log(passwordLength);
   }
 
 //confirm password with options window
   var lowerCase = confirm("Would you like to include lowercase letters in your password?");
-  console.log(lowerCase);
   var upperCase = confirm("Would you like to include uppercase letters in your password?");
-  console.log(upperCase);
   var numbers = confirm("Would you like to include numbers in your password?");
-  console.log(numbers);
   var special = confirm("Would you like to include special characters in your password?");
-  console.log(special);
 
 //piece to make sure atleast one option is selected is needed
   if (lowerCase === false && upperCase === false && numbers === false && special === false){

@@ -22,7 +22,7 @@ function writePassword() {
 //Start password generation on button click
 var generatePassword = function(){
   var password=[];
-  var passwordLength = window.prompt("Enter a number between 8 to 128.");
+  var passwordLength = window.prompt("Enter a number between 8 to 128:");
 
   if (!passwordLength) {
     window.alert("Please choose a number between 8 to 128. Please try again.");

@@ -17,7 +17,7 @@ generateBtn.addEventListener("click", writePassword);
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-//checks to see if the string is undefined do not write
+//checks to see if the string is undefined and if so do not write
   if (password == undefined) {
     passswordText.value = password
   }

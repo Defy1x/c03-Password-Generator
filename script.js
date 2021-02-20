@@ -17,8 +17,13 @@ generateBtn.addEventListener("click", writePassword);
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
+  if (password == undefined) {
+    passswordText.value = password
+  }
+  else{
   passwordText.value = password;
-}
+  }
+};
 
 //Start password generation on button click
 var generatePassword = function(){

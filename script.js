@@ -45,7 +45,7 @@ var generatePassword = function(){
   var numbers = confirm("Would you like to include numbers in your password?");
   var special = confirm("Would you like to include special characters in your password?");
 
-//piece to make sure atleast one option is selected is needed
+//make sure atleast one option is selected
   if (lowerCase === false && upperCase === false && numbers === false && special === false){
     window.alert("You must choose one of the four options to make your password protected. Please try again.");
     return;

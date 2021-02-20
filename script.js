@@ -19,9 +19,9 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 //checks to see if the string is undefined and if so do not write
   if (password == undefined) {
-    passswordText.value = password
+    return;
   }
-  else{
+  else {
   passwordText.value = password;
   }
 };

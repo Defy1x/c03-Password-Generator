@@ -9,6 +9,7 @@ var upperCaseString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numbersString = "0123456789";
 var specialString = "!()?[]`~;:!@#$%^&*+=";
 
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
@@ -66,7 +67,9 @@ var generatePassword = function(){
   }
   if (special) {
   combinePassword = combinePassword + specialString;
+};
 
+  if (lowerCase ===true || upperCase === true || numbers ===true || special === true){
 //random string generator for password
   for ( var i = 0; i < passwordLength; i++ ) {
   password += combinePassword[Math.floor(Math.random() * combinePassword.length)];

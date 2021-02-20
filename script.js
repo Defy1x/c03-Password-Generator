@@ -68,7 +68,7 @@ var generatePassword = function(){
   if (special) {
   combinePassword = combinePassword + specialString;
 };
-
+// if any of the conditions are true run the code
   if (lowerCase ===true || upperCase === true || numbers ===true || special === true){
 //random string generator for password
   for ( var i = 0; i < passwordLength; i++ ) {

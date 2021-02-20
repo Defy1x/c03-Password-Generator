@@ -65,7 +65,7 @@ var generatePassword = function(){
   }
   if (special) {
   combinePassword = combinePassword + specialString;
-
+  }
 //random string generator for password
   for ( var i = 0; i < passwordLength; i++ ) {
   password += combinePassword[Math.floor(Math.random() * combinePassword.length)];

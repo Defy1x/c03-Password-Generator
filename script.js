@@ -54,6 +54,7 @@ var generatePassword = function(){
   else {
 //combines the password together based on options selected
   var combinePassword = "";
+
   if (lowerCase) {
   combinePassword = lowerCaseString;
   }
@@ -65,8 +66,7 @@ var generatePassword = function(){
   }
   if (special) {
   combinePassword = combinePassword + specialString;
-  }
-  else {
+
 //random string generator for password
   for ( var i = 0; i < passwordLength; i++ ) {
   password += combinePassword[Math.floor(Math.random() * combinePassword.length)];

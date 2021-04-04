@@ -88,7 +88,7 @@ h1{
 
 #copy{
   background-color: blue !important;
-  color: white;
+  color: white !important;
 }
 
 button[disabled] {

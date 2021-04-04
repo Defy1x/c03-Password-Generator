@@ -81,6 +81,16 @@ h1{
   cursor: pointer;
 }
 
+#generate{
+    background-color: #fefd4f;
+    color: #000;
+}
+
+#copy{
+  background-color: blue !important;
+  color: white;
+}
+
 button[disabled] {
   cursor: default;
   background: #c0c7cf;
@@ -110,16 +120,6 @@ button[disabled] {
   border-radius: 6px;
   resize: none;
   overflow: hidden;
-}
-
-#generate{
-    background-color: #fefd4f;
-    color: #000;
-}
-
-#copy{
-  background-color: blue !important;
-  color: white;
 }
 
 @media (max-width: 720px) {

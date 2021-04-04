@@ -114,6 +114,11 @@ button[disabled] {
   overflow: hidden;
 }
 
+#copy{
+  background-color: blue;
+  color: white;
+}
+
 @media (max-width: 720px) {
   .card{
     height: 300px;

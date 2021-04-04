@@ -2,6 +2,8 @@
 
 // Grabs the generate selector
 var generateBtn = document.querySelector("#generate");
+var copyBtn = document.querySelector("#copy");
+
 
 //strings to set our password
 var lowerCaseString = "abcdefghijklmnopqrstuvwxyz";
@@ -12,6 +14,39 @@ var specialString = "!()?[]`~;:!@#$%^&*+=";
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+copyBtn.addEventListener("click", copyPassword);
+
+function copyPassword(){
+  var textToCopy = document.getElementById("password").value;
+
+  if (textToCopy === ''){
+      window.alert("There is nothing to copy. Please generate a password.");
+      return;
+  } else
+  // console.log(textToCopy)
+  // var el = textToCopy;
+  // el.select()
+  // document.execCommand('copy')
+  var str = document.getElementById("password").value;
+// Create new element
+var el = document.createElement('textarea');
+// Set value (string to be copied)
+el.value = str;
+// Set non-editable to avoid focus and move outside of view
+el.setAttribute('readonly', '');
+el.style = {position: 'absolute', left: '-9999px'};
+document.body.appendChild(el);
+// Select text inside element
+el.select();
+// Copy text to clipboard
+document.execCommand('copy');
+// Remove temporary element
+document.body.removeChild(el);
+  window.alert("Password Copied!");
+  return;
+}
+
+
 
 // Write password to the #password input
 function writePassword() {
